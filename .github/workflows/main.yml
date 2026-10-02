@@ -106,7 +106,7 @@ jobs:
 
       - name: Download and validate IPA
         run: |
-          pipx run gdown "https://ipauniverse.com/com.google.ios.youtube" -O youtube.ipa
+          pipx run gdown "https://archive.org/download/com.google.ios.youtube-20.42.3-decrypted_202512/com.google.ios.youtube-20.42.3-Decrypted.ipa" -O youtube.ipa
           file_type=$(file --mime-type -b youtube.ipa)
           if [[ "$file_type" != "application/x-ios-app" && "$file_type" != "application/zip" ]]; then
             echo "::error::Validation failed: The downloaded file is not a valid IPA. Detected type: $file_type."
